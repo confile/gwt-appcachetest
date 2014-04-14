@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module rename-to='example'>
+    <inherits name="com.google.gwt.user.User"/>
+    <inherits name="com.google.gwt.i18n.I18N"/>
+    <inherits name='com.google.gwt.core.Core'/>
+	<inherits name='com.google.gwt.inject.Inject' />
+	<inherits name='com.google.gwt.resources.Resources' />
+	<inherits name='com.google.gwt.editor.Editor' />
+	<inherits name="com.google.gwt.http.HTTP"/>
+  
+  <inherits name="com.googlecode.mgwt.MGWT"/>
+  
+  <inherits name='com.googlecode.gwtphonegap.PhoneGap' />
+  
+  <inherits name="org.realityforge.gwt.appcache.Appcache"/>
+  <inherits name="org.realityforge.gwt.appcache.linker.Linker"/>
+  <add-linker name="appcache"/>
+  
+
+	<inherits name='com.gwtplatform.mvp.Mvp' />
+
+<!-- 	<extend-configuration-property name="gin.ginjector.modules" -->
+<!-- 		     						value="test.client.gin.ClientModule"/> -->
+
+  <entry-point class='test.client.Example'/>
+
+
+
+
+
+  <source path='client'/>
+  <source path='shared'/>
+
+
+
+  <extend-configuration-property name="appcache_static_files" value="./"/>
+  <extend-configuration-property name="appcache_static_files" value="index.html"/>
+  <extend-configuration-property name="appcache_static_files" value="./js/canvas-to-blob-min.js"/>
+  
+  <add-linker name="xsiframe"/>
+  
+  <set-configuration-property name="devModeUrlWhitelistRegexp" value="http://(http-server|testgrails.dyndns.org|localhost|192\.168\.178\.26)(:\d+)?/.*" />
+  
+  <set-property name="user.agent" value="safari" />
+  <set-property name="mgwt.os" value="iphone" />  
+  
+  
+</module>

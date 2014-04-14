@@ -1,0 +1,5 @@
+/*
+ * JavaScript Canvas to Blob 2.0.5
+ */
+(function(a){var c=a.HTMLCanvasElement&&a.HTMLCanvasElement.prototype,b;if(b=a.Blob)try{b=Boolean(new Blob)}catch(k){b=!1}var f=b;if(b=f)if(b=a.Uint8Array)try{b=100===(new Blob([new Uint8Array(100)])).size}catch(l){b=!1}var h=b,g=a.BlobBuilder||a.WebKitBlobBuilder||a.MozBlobBuilder||a.MSBlobBuilder,d=(f||g)&&a.atob&&a.ArrayBuffer&&a.Uint8Array&&function(a){var b,e,c,d;b=0<=a.split(",")[0].indexOf("base64")?atob(a.split(",")[1]):decodeURIComponent(a.split(",")[1]);e=new ArrayBuffer(b.length);c=new Uint8Array(e);
+for(d=0;d<b.length;d+=1)c[d]=b.charCodeAt(d);a=a.split(",")[0].split(":")[1].split(";")[0];if(f)return new Blob([h?c:e],{type:a});c=new g;c.append(e);return c.getBlob(a)};a.HTMLCanvasElement&&!c.toBlob&&(c.mozGetAsFile?c.toBlob=function(a,b,e){e&&c.toDataURL&&d?a(d(this.toDataURL(b,e))):a(this.mozGetAsFile("blob",b))}:c.toDataURL&&d&&(c.toBlob=function(a,b,c){a(d(this.toDataURL(b,c)))}));"function"===typeof define&&define.amd?define(function(){return d}):a.dataURLtoBlob=d})(this);
